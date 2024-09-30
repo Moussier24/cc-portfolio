@@ -13,7 +13,7 @@ export default function Project({ project }: Props) {
   return (
     <Link href={`/projects/${project.uid}`}>
       <article className="flex flex-col">
-        <div className="flex-1 p-5 pr-0 pb-0 aspect-[4/3] rounded-[15px] bg-black">
+        <div className="flex-1 p-5 pr-0 pb-0 aspect-[4/3] rounded-[15px] bg-black overflow-hidden">
           <Image
             src={project.thumbnail || ""}
             alt={project.name || ""}
