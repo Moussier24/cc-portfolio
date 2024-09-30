@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Designer et Développeur web/mobile fullstack",
   icons: [
     {
-      url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/moi-min.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbW9pLW1pbi5qcGVnIiwiaWF0IjoxNzI3Njg4Nzk5LCJleHAiOjQ4ODEyODg3OTl9.HHJmKDkJUFETgWt3XGhZZf6zeLxtflKmzs9wNTrhOu8&t=2024-09-30T09%3A33%3A19.386Z",
+      url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbG9nby5wbmciLCJpYXQiOjE3Mjc2ODk3NjYsImV4cCI6NDg4MTI4OTc2Nn0.OD-B5aGMelJo4zhj4q3oB2IGgEmL61JNfj5In_TjQm0&t=2024-09-30T09%3A49%3A26.310Z",
     },
   ],
   openGraph: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://cheikcisse.com",
     images: [
       {
-        url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/moi-min.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbW9pLW1pbi5qcGVnIiwiaWF0IjoxNzI3Njg4Nzk5LCJleHAiOjQ4ODEyODg3OTl9.HHJmKDkJUFETgWt3XGhZZf6zeLxtflKmzs9wNTrhOu8&t=2024-09-30T09%3A33%3A19.386Z",
+        url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbG9nby5wbmciLCJpYXQiOjE3Mjc2ODk3NjYsImV4cCI6NDg4MTI4OTc2Nn0.OD-B5aGMelJo4zhj4q3oB2IGgEmL61JNfj5In_TjQm0&t=2024-09-30T09%3A49%3A26.310Z",
         width: 1200,
         height: 630,
         alt: "Cheik Cissé",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Cheik Cissé",
     images: [
       {
-        url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/moi-min.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbW9pLW1pbi5qcGVnIiwiaWF0IjoxNzI3Njg4Nzk5LCJleHAiOjQ4ODEyODg3OTl9.HHJmKDkJUFETgWt3XGhZZf6zeLxtflKmzs9wNTrhOu8&t=2024-09-30T09%3A33%3A19.386Z",
+        url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbG9nby5wbmciLCJpYXQiOjE3Mjc2ODk3NjYsImV4cCI6NDg4MTI4OTc2Nn0.OD-B5aGMelJo4zhj4q3oB2IGgEmL61JNfj5In_TjQm0&t=2024-09-30T09%3A49%3A26.310Z",
         width: 1200,
         height: 630,
         alt: "Cheik Cissé",
