@@ -2,6 +2,7 @@ import Tag from "@/components/Tag";
 import { Project } from "@/types/database";
 import supabase from "@/utils/supabaseConfig";
 import { ArrowUpRight01Icon, MailAtSign01Icon } from "hugeicons-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -12,6 +13,61 @@ type Props = {
     projectId: string;
   };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const projectId = params.projectId;
+  const { project } = await getData(projectId);
+
+  if (!project) {
+    return {
+      title: "Project not found",
+    };
+  }
+
+  return {
+    title: project.name,
+    description: project.description,
+    openGraph: {
+      title: project.name || "",
+      description: project.description || "",
+      type: "website",
+      images: [
+        {
+          url: project.thumbnail || "",
+          width: 1200,
+          height: 630,
+          alt: project.name || "",
+        },
+        (project.images || []).map((image) => ({
+          url: image || "",
+          width: 1200,
+          height: 630,
+          alt: project.name || "",
+        }))[0],
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "Cheik Cissé",
+      description: project.description || "",
+      title: project.name || "",
+      images: [
+        {
+          url: project.thumbnail || "",
+          width: 1200,
+          height: 630,
+          alt: project.name || "",
+        },
+        (project.images || []).map((image) => ({
+          url: image || "",
+          width: 1200,
+          height: 630,
+          alt: project.name || "",
+        }))[0],
+      ],
+    },
+  };
+}
 
 async function getData(projectId: string): Promise<{
   project: Project | null;

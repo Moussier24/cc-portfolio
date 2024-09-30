@@ -5,7 +5,40 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Cheik Cissé",
-  description: "Designer et Développeur wxeb fullstack",
+  description: "Designer et Développeur web/mobile fullstack",
+  icons: [
+    {
+      url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/moi-min.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbW9pLW1pbi5qcGVnIiwiaWF0IjoxNzI3Njg4Nzk5LCJleHAiOjQ4ODEyODg3OTl9.HHJmKDkJUFETgWt3XGhZZf6zeLxtflKmzs9wNTrhOu8&t=2024-09-30T09%3A33%3A19.386Z",
+    },
+  ],
+  openGraph: {
+    title: "Cheik Cissé",
+    description: "Designer et Développeur web/mobile fullstack",
+    type: "website",
+    url: "https://cheikcisse.com",
+    images: [
+      {
+        url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/moi-min.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbW9pLW1pbi5qcGVnIiwiaWF0IjoxNzI3Njg4Nzk5LCJleHAiOjQ4ODEyODg3OTl9.HHJmKDkJUFETgWt3XGhZZf6zeLxtflKmzs9wNTrhOu8&t=2024-09-30T09%3A33%3A19.386Z",
+        width: 1200,
+        height: 630,
+        alt: "Cheik Cissé",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "Cheik Cissé",
+    description: "Designer et Développeur web/mobile fullstack",
+    title: "Cheik Cissé",
+    images: [
+      {
+        url: "https://bzszwpattbiphmxezsij.supabase.co/storage/v1/object/sign/CC%20Portfolio/moi-min.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJDQyBQb3J0Zm9saW8vbW9pLW1pbi5qcGVnIiwiaWF0IjoxNzI3Njg4Nzk5LCJleHAiOjQ4ODEyODg3OTl9.HHJmKDkJUFETgWt3XGhZZf6zeLxtflKmzs9wNTrhOu8&t=2024-09-30T09%3A33%3A19.386Z",
+        width: 1200,
+        height: 630,
+        alt: "Cheik Cissé",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
