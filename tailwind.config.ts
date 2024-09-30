@@ -12,6 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        AeonikTRIAL: ["AeonikTRIAL", "sans-serif"],
+      },
+      screens: {
+        small: "375px",
+      },
     },
   },
   plugins: [],

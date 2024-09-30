@@ -1,101 +1,96 @@
+import ProjectsCarousel from "@/components/ProjectsCarousel";
+import { Project, Setting } from "@/types/database";
+import supabase from "@/utils/supabaseConfig";
+import { ArrowDown02Icon } from "hugeicons-react";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+export const revalidate = 0;
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+async function getData(): Promise<{
+  projects: Project[];
+  settings: Setting | null;
+}> {
+  const data: {
+    projects: Project[];
+    settings: Setting | null;
+  } = {
+    projects: [],
+    settings: null,
+  };
+
+  const { data: projects, error } = await supabase.from("projects").select("*");
+  const { data: settings } = await supabase
+    .from("settings")
+    .select("*")
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  data.projects = projects as Project[];
+  data.settings = settings as Setting;
+
+  return data;
+}
+
+export default async function Home() {
+  const { projects, settings } = await getData();
+
+  return (
+    <main className="">
+      <section id="hero" className="cc-container py-28">
+        <h1 className="text-[35px] small:text-[60px]] sm:text-[80px] leading-normal sm:leading-[110px] max-w-full mb-16">
+          Designer et développeur de produits numériques performants et élégants
+        </h1>
+        <div className="pt-16 border-t border-[#5D4300] flex justify-between items-end flex-wrap gap-y-8">
+          <div className="flex items-center gap-2">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={settings?.avatar || ""}
+              alt="Cheik Cissé"
+              width={55}
+              height={55}
+              className="rounded-full object-cover w-[55px] h-[55px]"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            <p className="max-w-[546px] text-[#5D4300]">
+              Je suis Cheik CISSE, développeur et designer polyvalent de site
+              web, application mobile, logiciel Desktop.
+            </p>
+          </div>
+          <a href="#contact" className="cc-button">
+            <span>Contactez-moi</span>
+            <ArrowDown02Icon size={18} />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </section>
+      <section id="projects" className="cc-container mb-28">
+        <ProjectsCarousel projects={projects} />
+      </section>
+      <section id="about" className="bg-black">
+        <div className="cc-container py-28 flex flex-col justify-center items-center gap-28">
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={settings?.avatar || ""}
+            alt="Cheik Cissé"
+            width={234}
+            height={234}
+            className="rounded-full bg-white object-cover w-[234px] h-[234px]"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <p className="text-white text-[25px] sm:text-[40px] max-w-full text-center normal-case leading-[55px]">
+            Je m’appelle Cheik CISSÉ.
+            <br />
+            <br />
+            Je suis un développeur Fullstack et un passionné du Design. Je suis
+            basé au Burkina Faso et je travaille avec des équipes et des
+            particuliers du monde entier sur diverses projets (web, mobile)
+            depuis 6 belles années déjà.
+            <br />
+            <br />
+            J’aime les belles interfaces et je m’impose de les rendre
+            performantes, accessibles et adaptées au besoin de mes partenaires
+            et des utilisateurs.
+          </p>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'AeonikTRIAL';
+  src: url('/fonts/AeonikTRIAL/AeonikTRIAL-Regular.otf');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: 'AeonikTRIAL';
+  font-weight: 700;
+  src: url('/fonts/AeonikTRIAL/AeonikTRIAL-Bold.otf');
+}
+
+@font-face {
+  font-family: 'AeonikTRIAL';
+  font-weight: 300;
+  src: url('/fonts/AeonikTRIAL/AeonikTRIAL-Light.otf');
+}
+
+:root {
+  --background: #F7B200;
+  --foreground: #000000;
+}
+
+@layer base {
+  *{
+    @apply m-0 p-0 box-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply font-AeonikTRIAL text-base font-bold uppercase bg-background text-foreground min-h-screen; 
+  }
+  main {
+    @apply min-h-screen
+  }
+  img {
+    @apply bg-black;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .cc-container {
+    @apply mx-auto max-w-[1200px] px-4;
+  }
+  .cc-button {
+    @apply bg-white p-[20px] text-black rounded-3xl normal-case flex items-center justify-center text-center gap-2;
+  }
+  .cc-button-small {
+    @apply bg-white px-4 py-1 text-black rounded-[10px] normal-case flex items-center justify-center text-center gap-2;
+  }
+  .cc-button-border {
+    @apply border border-black bg-transparent text-black;
   }
 }
