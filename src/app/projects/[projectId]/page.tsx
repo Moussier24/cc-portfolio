@@ -89,6 +89,7 @@ export default async function page({ params }: Props) {
               src={image}
               alt={project.name || ""}
               className="w-full h-auto rounded-[15px]"
+              loading="lazy"
             />
           </picture>
         ))}

@@ -17,6 +17,7 @@ export default function Project({ project }: Props) {
           <Image
             src={project.thumbnail || ""}
             alt={project.name || ""}
+            loading="lazy"
             width={600}
             height={500}
             className="w-full h-full rounded-[10px] rounded-tr-none rounded-bl-none object-cover"
