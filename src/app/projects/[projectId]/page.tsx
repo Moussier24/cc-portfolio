@@ -78,11 +78,12 @@ async function getData(projectId: string): Promise<{
     project: null,
   };
 
-  const { data: project, error } = await supabase
+  const { data: projects, error } = await supabase
     .from("projects")
     .select()
-    .eq("uid", projectId)
-    .single();
+    .eq("uid", projectId);
+
+  const project = projects?.[0];
 
   if (error) {
     throw error;

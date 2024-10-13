@@ -11,3 +11,5 @@ const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
 });
 
 export default supabase;
+
+export const supabaseStorage = supabase.storage;
