@@ -28,7 +28,6 @@ const ProjectForm = ({
   });
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [images, setImages] = useState<File[]>([]);
-  const [sortedImages, setSortedImages] = useState<string[]>([]);
   const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null);
   const [imagesToDelete, setImagesToDelete] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);

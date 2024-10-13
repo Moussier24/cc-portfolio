@@ -5,7 +5,7 @@ interface SidebarProps {
   onSelectProject: (project: Project) => void;
   onAddNewProject: () => void;
   selectedProject: Project | null;
-  onLogout: () => void; // Nouvelle prop pour gérer la déconnexion
+  onLogout: () => void;
 }
 
 const Sidebar = ({
@@ -13,7 +13,7 @@ const Sidebar = ({
   onSelectProject,
   onAddNewProject,
   selectedProject,
-  onLogout, // Ajout de la nouvelle prop
+  onLogout,
 }: SidebarProps) => {
   return (
     <aside className="w-64 bg-white rounded-2xl p-4 overflow-y-auto flex flex-col h-full">
@@ -47,7 +47,6 @@ const Sidebar = ({
         </ul>
       </div>
 
-      {/* Nouveau bouton de déconnexion */}
       <button
         onClick={onLogout}
         className="cc-button cc-button-small cc-button-border w-full mt-4"
